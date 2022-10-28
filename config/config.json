@@ -2,7 +2,7 @@
 
 {
   "development": {
-    "username": "d4tgbilbplrcpn",
+    "username": "lydiyqdlvqmsdk",
     "password": "c0784915efa080744742e949da1e2582b6404c2f41e1ef0c2caaa845bb0e9123",
     "database": "d4tgbilbplrcpn",
     "host": "ec2-44-195-132-31.compute-1.amazonaws.com",
@@ -25,9 +25,10 @@
         "require": true,
         "rejectUnauthorized": false
       }
+    }
   },
   "production": {
-    "username": "d4tgbilbplrcpn",
+    "username": "lydiyqdlvqmsdk",
     "password": "c0784915efa080744742e949da1e2582b6404c2f41e1ef0c2caaa845bb0e9123",
     "database": "d4tgbilbplrcpn",
     "host": "ec2-44-195-132-31.compute-1.amazonaws.com",
@@ -38,4 +39,5 @@
         "rejectUnauthorized": false
       }
   }
+}
 }
