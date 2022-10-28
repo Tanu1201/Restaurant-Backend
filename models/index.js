@@ -11,7 +11,7 @@ const db = {};
 
 let sequelize;
 if (config.use_env_variable) {
-  sequelize = new Sequelize("postgres://vqdiqwopeqvxjs:0901e1223263b7d6e7ef834b96ff30283668f01257b951038b6f5cc28ac6c6c5@ec2-44-199-9-102.compute-1.amazonaws.com:5432/dah7aajl1rusu",{
+  sequelize = new Sequelize("postgres://vqdiqwopeqvxjs:0901e1223263b7d6e7ef834b96ff30283668f01257b951038b6f5cc28ac6c6c5@ec2-44-199-9-102.compute-1.amazonaws.com:5432/dah7aajl1rusu?sslmode=no-verify",{
     host: 'ec2-44-199-9-102.compute-1.amazonaws.com',
     dialect: 'postgres',
     protocol: 'postgres',
