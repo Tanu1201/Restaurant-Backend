@@ -11,7 +11,8 @@ module.exports = {
     }
     try{
     //Check If User Already Exists in Our Db
-    const existingUser = await models.User.findOne({email: req.body.email})
+    const existingUser = await models.User.findOne({email})
+    console.log({existingUser});
     if(existingUser)
     {
         return res.status(400).json({message:"User already exist, Please login"})
