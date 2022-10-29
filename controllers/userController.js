@@ -4,17 +4,17 @@ const SECRET_KEY = '80f1a593-2aaa-427e-bcc1-a870ccdc4bc2'
 module.exports = {
   //User SignUp
   create: async (req, res) => {
-    if (!req.body.name || !req.body.email || !req.body.password || !req.body.email || !req.body.contact_no || !req.body.address) {
+    if (!req.body.name || !req.body.email || !req.body.password || !req.body.email || !req.body.contact || !req.body.address) {
       return res
         .status(400)
-        .send({ message: 'fields required' })
+        .send({ message: 'All fields required' })
     }
     try{
     //Check If User Already Exists in Our Db
     const existingUser = await models.User.findOne({email: req.body.email})
     if(existingUser)
     {
-        return res.status(400).json({message:"User already exist"})
+        return res.status(400).json({message:"User already exist, Please login"})
     }
 
     //Create User
@@ -22,7 +22,7 @@ module.exports = {
       name: req.body.name,
       email:req.body.email,
       password:req.body.password,
-      contact_no:req.body.contact,
+      contact:req.body.contact,
       address:req.body.address
        
     })
