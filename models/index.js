@@ -14,9 +14,7 @@ let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USERNAME,process.env.PASSWORD, config);
 } else {
-  sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USERNAME,process.env.PASSWORD, {host: 'localhost',
-  dialect:'postgres' /* one of 'mysql' | 'postgres' | 'sqlite' | 'mariadb' | 'mssql' | 'db2' | 'snowflake' | 'oracle' */
-})
+  sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USERNAME,process.env.PASSWORD, config);
 }
 
 fs
