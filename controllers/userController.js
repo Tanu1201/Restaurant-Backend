@@ -1,6 +1,6 @@
 const models= require('../models')
 const jwt = require('jsonwebtoken')
-const SECRET_KEY = '80f1a593-2aaa-427e-bcc1-a870ccdc4bc2'
+
 module.exports = {
   //User SignUp
   create: async (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
     })
 
     //Generate Token -- Authentication and Authorization to be Implemented
-    const token = jwt.sign({email:result.email,id :result.id},SECRET_KEY)
+    const token = jwt.sign({email:result.email,id :result.id},proces.env.SECRET_KEY)
     return res.status(201).json({ message: 'User created',user:result,token:token })
     }
     catch(error){
@@ -58,7 +58,7 @@ module.exports = {
 
     }
 
-    const token = jwt.sign({email:email,id :existingUser.id},SECRET_KEY)
+    const token = jwt.sign({email:email,id :existingUser.id},process.env.SECRET_KEY)
     return res.status(201).json({ user:existingUser,token:token })
     }
     catch(error){
