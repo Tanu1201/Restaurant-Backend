@@ -49,5 +49,16 @@ module.exports = {
         });
         const cartData = {items:result,CartTotal:result.reduce((sum,i)=>{return sum + i.price*i.quantity},0)}
         return res.status(200).json(cartData)
+    },
+
+    subtraction: async(req,res)=>{
+        const id =req.params.id
+        const result = await db.sequelize.query(`select carts."userId", carts."quantity",  dishes."id" , dishes."name" , dishes."price"from carts INNER JOIN dishes ON carts."dishId"=dishes."id" where carts."userId"=?`,{replacements: [id]
+            ,type: db.Sequelize.QueryTypes.SELECT
+    
+        
+        });
+        const cartData={items:result,CartTotal:result.reduce((sum,i)=> { return sum-i.price*quantity},0
+        )}
     }
 }

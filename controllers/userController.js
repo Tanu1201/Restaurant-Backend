@@ -29,7 +29,7 @@ module.exports = {
     })
 
     //Generate Token -- Authentication and Authorization to be Implemented
-    const token = jwt.sign({email:result.email,id :result.id},proces.env.SECRET_KEY)
+    const token = jwt.sign({email:result.email,id :result.id},process.env.SECRET_KEY)
     return res.status(201).json({ message: 'User created',user:result,token:token })
     }
     catch(error){
